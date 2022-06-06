@@ -1,70 +1,21 @@
-# Getting Started with Create React App
+# Creando proyecto personal
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Friends4Me
 
-## Available Scripts
+# Qué hace el proyecto 
 
-In the project directory, you can run:
+El presente proyecto sirve para poder ayudar a las personas que son tímidas y que tienen la voluntad de hacer amigos por su propia cuenta. Actualmente, se busca crear una
+red social en donde las personas tímidas se sientan seguras para crear nuevos amigos. Con esto se busca que las personas tímidas puedan seleccionar sus temas de preferencia
+y que les sirva para poder conversar de lo mismo con nuevas personas que tengan los mismos intereses que ellos. 
 
-### `npm start`
+# Por qué el proyecto es útil
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+El proyecto es útil porque se estará desarrollando una nueva red social en donde las personas tímidas puedan crear nuevos amigos sin ningún problema. También se desea que este
+proyecto pueda ayudar a las personas tímidas a poder vencer todas sus inseguridades o fobias sociales con el mundo exterior. Asimismo, es importante destacar que este proyecto
+se está desarrollando desde cero. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Cómo pueden empezar los usuarios con el proyecto
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Para poder comenzar con el proyecto, es importante saber cuales son algunos de los problemas que puedan estar teniendo las personas alrededor del mundo. Es importante destacar
+que en este caso se desea satisfacer las necesidades de las personas tímidas. Sin embargo, aún existen muchas necesidades por cumplir en el mundo, las cuales podrían ser de salud,
+educación, comunicación, etc., por lo tanto 
