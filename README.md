@@ -18,4 +18,9 @@ se está desarrollando desde cero.
 
 Para poder comenzar con el proyecto, es importante saber cuales son algunos de los problemas que puedan estar teniendo las personas alrededor del mundo. Es importante destacar
 que en este caso se desea satisfacer las necesidades de las personas tímidas. Sin embargo, aún existen muchas necesidades por cumplir en el mundo, las cuales podrían ser de salud,
-educación, comunicación, etc., por lo tanto 
+educación, comunicación, etc., por lo tanto es decisión y obligación de los programadores buscar las necesidades que se pueden sustentar mediante un programa.
+
+# Quién mantiene y contribuye con el proyecto
+
+Actualmente, el proyecto está siendo mantenido por mí, dado que inicialmente estoy probando el proyecto y estoy buscando que se pueda hacer más eficiente. Sin embargo, estoy considerando
+poder agregar a más personas en el proyecto para poderlo tener más eficiente y con las mejores prácticas posibles.
