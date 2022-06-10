@@ -13,16 +13,17 @@ app.use(express.json()) // Configuración de body-parser.
 
 // Rutes
 
-// Creando un todo.
+// Creando un todo. (Se está insertando datos en la base de datos alojada en Elephant.)
 
 // El async hace el request más fácil.
 app.post('/todos', async (req, res) => {
     try {
         
-        const { description } = req.body
-        const newTodo = await pool.query('INSERT INTO conection (mensajeExito) VALUES ($1)', [description]) 
-        // todos es la tabla. description es la columna. $1 es el valor. [description] es lo que se va a insertar.
-        res.json(newTodo)
+        const { description } = req.body // El body-parser nos permite acceder a los datos que nos llegan por el body.
+        const newTodo = await pool.query('INSERT INTO conection (mensajeExito) VALUES ($1) RETURNING *', [description]) 
+        // todos es la tabla. description es la columna. $1 es el valor. RETURNING * sirve para devolver todos los datos de la tabla. [description] es el valor.
+        // El RETURNING * hay que verlo en postman para ver que nos devuelve.
+        res.json(newTodo) // El json es para enviar los datos.
 
     } catch (error) {
         console.log(error.message)
