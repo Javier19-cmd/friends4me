@@ -20,7 +20,7 @@ app.post('/todos', async (req, res) => {
     try {
         
         const { description } = req.body
-        const newTodo = await pool.query('INSERT INTO todos (description) VALUES ($1)', [description]) 
+        const newTodo = await pool.query('INSERT INTO conection (mensajeExito) VALUES ($1)', [description]) 
         // todos es la tabla. description es la columna. $1 es el valor. [description] es lo que se va a insertar.
         res.json(newTodo)
 
