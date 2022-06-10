@@ -13,13 +13,13 @@ app.use(express.json()) // Configuración de body-parser.
 
 // Rutes
 
-// Creando un todo. (Se está insertando datos en la base de datos alojada en Elephant.)
+// Insertando un todo. (Se está insertando datos en la base de datos alojada en Elephant.)
 
 // El async hace el request más fácil.
 app.post('/todos', async (req, res) => {
     try {
         
-        const { description } = req.body // El body-parser nos permite acceder a los datos que nos llegan por el body.
+        const { description } = req.body // Se destructura la descripción que se manda.
         const newTodo = await pool.query('INSERT INTO conection (mensajeExito) VALUES ($1) RETURNING *', [description]) 
         // todos es la tabla. description es la columna. $1 es el valor. RETURNING * sirve para devolver todos los datos de la tabla. [description] es el valor.
         // El RETURNING * hay que verlo en postman para ver que nos devuelve.
@@ -30,13 +30,68 @@ app.post('/todos', async (req, res) => {
     }
 })
 
-// Obteniendo todos los todos.
+// Obteniendo todos los todos de una tabla. (Esto se manda a pedir a la base de datos alojada en Elephant.)
+
+app.get("/todos", async (req, res) => {
+    try {
+        // Seleccionando objetos de una tabla de la base de datos.
+        const allTodos = await pool.query('SELECT * FROM conection')
+        res.json(allTodos.rows) // El json es para enviar los datos.
+
+    } catch (error) {
+        console.log(error.message)
+    }
+})
 
 // Obteniendo un todo.
 
+// Este request permite ser dinámico.
+app.get("/todos/:id", async (req, res) => {
+
+    try {
+        
+        const { id } = req.params // Se destructura el id que se manda.
+        const todo = await pool.query("SELECT * FROM conection WHERE id_mensaje = $1", [id]) 
+        // Seleccionando objetos de una tabla de la base de datos. En el WHERE se pone el id que se quiere jalar. [id] se especifica el id que se quiere jalar.
+
+        res.json(todo.rows[0]) // Se jala el primer ítem que se jaló.
+    } catch (error) {
+        console.log(error.message)
+    }
+})
+
 // Actualizando un todo.
 
+app.put("/todos/:id", async (req, res) => {
+    try {
+        const { id } = req.params // Se destructura el id que se manda.
+        const { description } = req.body // Se destructura la descripción que se manda.
+        
+        
+        const updateTodo = await pool.query("UPDATE conection SET mensajeExito = $1 WHERE id_mensaje = $2", [description, id])
+        //  Se actualiza el mensaje específico con el id que se manda.
+
+        res.json("Todo actualizado") // El json es para enviar los datos.
+
+
+    } catch (error) {
+        console.log(error.message)
+    }
+})
+
 // Eliminando un todo.
+app.delete("/todos/:id", async (req, res) => {
+    try {
+        
+        const { id } = req.params // Se destructura el id que se manda. 
+        const deleteTodo = await pool.query("DELETE FROM conection WHERE id_mensaje = $1", [id]) 
+        // Se elimina el mensaje específico con el id que se manda.
+
+        res.json("Todo eliminado") // El json es para enviar los datos.
+    } catch (error) {
+        console.log(error.message)
+    }
+})
 
 // Iniciamos el servidor.
 app.listen(PORT, () => {
