@@ -1,3 +1,7 @@
+/**
+ * Referncias: https://www.youtube.com/watch?v=ldYcgPKEZC8&ab_channel=freeCodeCamp.org
+*/
+
 import express from 'express'
 import cors from 'cors'
 import bodyParser from 'body-parser'
