@@ -21,7 +21,8 @@ app.post('/todos', async (req, res) => {
         
         const { description } = req.body // Se destructura la descripción que se manda.
         const newTodo = await pool.query('INSERT INTO conection (mensajeExito) VALUES ($1) RETURNING *', [description]) 
-        // todos es la tabla. description es la columna. $1 es el valor. RETURNING * sirve para devolver todos los datos de la tabla. [description] es el valor.
+        // conection es la tabla. mensajeExito es la columna. $1 es el valor. RETURNING * sirve para devolver todos los datos de la tabla. 
+        //[description] es el valor que se va a insertar en la tabla.
         // El RETURNING * hay que verlo en postman para ver que nos devuelve.
         res.json(newTodo) // El json es para enviar los datos.
 
@@ -43,7 +44,7 @@ app.get("/todos", async (req, res) => {
     }
 })
 
-// Obteniendo un todo.
+// Obteniendo un todo.(Esto se manda a pedir a la base de datos alojada en Elephant.)
 
 // Este request permite ser dinámico.
 app.get("/todos/:id", async (req, res) => {
@@ -60,7 +61,7 @@ app.get("/todos/:id", async (req, res) => {
     }
 })
 
-// Actualizando un todo.
+// Actualizando un todo. (Esto se actualiza en la base de datos alojada en Elephant.)
 
 app.put("/todos/:id", async (req, res) => {
     try {
@@ -79,7 +80,7 @@ app.put("/todos/:id", async (req, res) => {
     }
 })
 
-// Eliminando un todo.
+// Eliminando un todo. (Esto se elimina en la base de datos alojada en Elephant.)
 app.delete("/todos/:id", async (req, res) => {
     try {
         
