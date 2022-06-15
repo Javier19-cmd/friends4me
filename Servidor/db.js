@@ -1,3 +1,7 @@
+/**
+ * Referencias: 
+ * 1. Importar un archivo .env: https://www.npmjs.com/package/dotenv
+*/
 import pg from 'pg'
 import 'dotenv/config'
 
