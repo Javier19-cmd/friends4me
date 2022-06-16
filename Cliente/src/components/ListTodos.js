@@ -11,6 +11,20 @@ const ListTodos = () => {
 
     const [todos, setTodos] = useState([]) // Estado que servirá para poder guardar todos los datos que se traen del API.
 
+    // Función para eliminar un todo.
+    const deleteTodo = async (id) => {
+        try {
+           const eliminarTodo = await fetch(`http://localhost:3000/todos/${id}`, {
+                method: 'DELETE'
+            })
+            console.log(eliminarTodo)
+            setTodos(todos.filter(todo => todo.id_mensaje !== id)) // Se elimina el todo que se elimino del estado y de la base de datos.
+        } catch (error) {
+            console.log(error.message)
+        }
+    }
+
+    // Método para traer los datos del API.
     const getTodos = async () => {
         try {
             
@@ -51,13 +65,14 @@ const ListTodos = () => {
                 </tr>*/}
 
                 {todos.map(todo => (
-                    <tr>
-                        <td>{todo.mensajeexito}</td>
+                    <tr key={todo.id_mensaje}>
+                        <td>{todo.mensajeexito}</td>  {/*Se imprime el mensaje que se trae del API. Se imprime en la columna mensajeexito*/}
                         <td>Edit</td>
-                        <td>Delete</td>
+                        <td>
+                            <button className="btn btn-danger" onClick={() => deleteTodo(todo.id_mensaje)}>Delete</button>
+                        </td>
                     </tr>
-                ))} {/* Se mapeó todo lo que se trajo y luego se imprimió de manera gráfica la información que hay en el API. mensajeexito es la descripción
-                 de lo que está en la lista de lo que se trajo*/}
+                ))}
                 </tbody>
             </table>
         </Fragment>
