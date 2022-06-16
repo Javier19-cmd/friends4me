@@ -1,5 +1,5 @@
 import './App.css'
-import React, { Fragment } from 'react'
+import React from 'react'
 //const { Client } = require('pg');
 
 /**
@@ -12,11 +12,9 @@ import InputTodo from './components/InputTodo' // Input del Todo.
 
 function App() {
   return (
-    <Fragment>
-      <div className='container'>
-        <InputTodo />
-      </div>
-    </Fragment>
+    <div className='container'>
+      <InputTodo />
+    </div>
   )
 }
 
