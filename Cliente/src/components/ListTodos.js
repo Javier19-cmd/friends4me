@@ -1,5 +1,5 @@
 import React, {Fragment, useEffect, useState} from 'react'
-
+import EditTodo from './EditTodo'
 
 /**
  * Tabla extraída de: https://www.w3schools.com/bootstrap5/bootstrap_tables.php
@@ -67,7 +67,7 @@ const ListTodos = () => {
                 {todos.map(todo => (
                     <tr key={todo.id_mensaje}>
                         <td>{todo.mensajeexito}</td>  {/*Se imprime el mensaje que se trae del API. Se imprime en la columna mensajeexito*/}
-                        <td>Edit</td>
+                        <td><EditTodo /></td>
                         <td>
                             <button className="btn btn-danger" onClick={() => deleteTodo(todo.id_mensaje)}>Delete</button>
                         </td>
