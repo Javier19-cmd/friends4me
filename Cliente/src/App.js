@@ -8,12 +8,14 @@ import React from 'react'
 */
 
 //Componentes a usar.
-import InputTodo from './components/InputTodo' // Input del Todo.
+import InputTodo from './components/InputTodo' // Este componente ingresa datos a la base de datos.
+import ListTodos from './components/ListTodos' // Este componente enseña los datos de la base de datos.
 
 function App() {
   return (
     <div className='container'>
       <InputTodo />
+      <ListTodos />
     </div>
   )
 }

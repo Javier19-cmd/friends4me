@@ -18,6 +18,8 @@ const InputTodo = () => {
             
             console.log(response)
 
+            window.location = '/' // Se recarga la pagina.
+
         } catch (error) {
             console.log(error.message)
         }
