@@ -44,7 +44,7 @@ const ListTodos = () => {
         getTodos()
     }, []) // Se ejecuta el useEffect cada vez que se renderize el componente.
 
-    console.log("Datos: ", todos) // Se imprime el estado.
+    //console.log("Datos: ", todos) // Se imprime el estado.
 
     return (
         <Fragment>
