@@ -4,9 +4,6 @@
 
 import express from 'express'
 import cors from 'cors'
-import bodyParser from 'body-parser'
-import morgan from 'morgan'
-import pg from 'pg'
 const PORT = process.env.PORT || 3000
 const app = express() // Instancia de express.
 import pool from './db.js'
