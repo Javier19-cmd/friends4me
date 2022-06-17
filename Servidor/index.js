@@ -48,7 +48,7 @@ app.get("/todos", async (req, res) => {
     }
 })
 
-// Obteniendo un todo.(Esto se manda a pedir a la base de datos alojada en Elephant.)
+// Obteniendo un todo con un id específico.(Esto se manda a pedir a la base de datos alojada en Elephant.)
 
 // Este request permite ser dinámico.
 app.get("/todos/:id", async (req, res) => {

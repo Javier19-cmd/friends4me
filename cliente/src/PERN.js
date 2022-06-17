@@ -1,4 +1,4 @@
-import './App.css'
+import './PERN.css'
 import React from 'react'
 //const { Client } = require('pg');
 
@@ -11,7 +11,7 @@ import React from 'react'
 import InputTodo from './components/InputTodo' // Este componente ingresa datos a la base de datos.
 import ListTodos from './components/ListTodos' // Este componente enseña los datos de la base de datos.
 
-function App() {
+function PERN() {
   return (
     <div className='container'>
       <InputTodo />
@@ -20,4 +20,4 @@ function App() {
   )
 }
 
-export default App;
+export default PERN
