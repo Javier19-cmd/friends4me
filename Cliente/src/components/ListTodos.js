@@ -67,7 +67,7 @@ const ListTodos = () => {
                 {todos.map(todo => (
                     <tr key={todo.id_mensaje}>
                         <td>{todo.mensajeexito}</td>  {/*Se imprime el mensaje que se trae del API. Se imprime en la columna mensajeexito*/}
-                        <td><EditTodo /></td>
+                        <td><EditTodo todo={todo} /></td>
                         <td>
                             <button className="btn btn-danger" onClick={() => deleteTodo(todo.id_mensaje)}>Delete</button>
                         </td>
