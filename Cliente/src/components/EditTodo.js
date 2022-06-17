@@ -1,3 +1,4 @@
+// Referencia del modal: https://www.w3schools.com/bootstrap5/tryit.asp?filename=trybs_modal_fullscreen_sm
 import React, {Fragment, useState} from 'react'
 
 const EditTodo = ({ todo }) => {
