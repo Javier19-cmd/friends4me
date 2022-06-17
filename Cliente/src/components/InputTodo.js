@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {Fragment, useState} from 'react'
 
 const InputTodo = () => {
 
@@ -26,17 +26,14 @@ const InputTodo = () => {
     }
 
     return (
-        <div className='agregar'>
-            <h1>Pern Todo List</h1>
-            <form onSubmit={onSubmitForm}>
-                <input type='text' 
-                    className='form1' 
-                    value={description} 
-                    onChange={e => setDescription(e.target.value)}
-                    />
-                <button className='button1'>Agegar</button>
+        <Fragment>
+            <h1 className='text-center mt-5'>Pern Todo List</h1>
+            <form className="d-flex mt-5" onSubmit={onSubmitForm}>
+                <input type="text" className="form-control" 
+                    value={description} onChange={e => setDescription(e.target.value)}/>
+                <button className="btn btn-success">agregar</button>
             </form>
-        </div>
+        </Fragment>
     )
 }
 
