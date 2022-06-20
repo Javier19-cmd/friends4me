@@ -1,5 +1,6 @@
 /**
  * Referncias: https://www.youtube.com/watch?v=ldYcgPKEZC8&ab_channel=freeCodeCamp.org
+ * Como iniciar el servidor con nodemon: https://www.youtube.com/watch?v=_X-QZ-_X-_Q&ab_channel=freeCodeCamp.org
 */
 
 import express from 'express'
