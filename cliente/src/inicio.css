@@ -1,13 +1,16 @@
 /*
 * Referencias: 
-* Sitios web responsive: https://aukera.es/blog/diseno-responsive/
+* 1. Sitios web responsive: https://aukera.es/blog/diseno-responsive/
+* 2. Font Signika: https://fonts.google.com/specimen/Signika?query=signika
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Signika:wght@300&display=swap');
 
 /*Propiedades del encabezado*/
 .Encabezado{
     position: relative;
     display: flex;
-    top: 50px;
+    top: 30px;
     justify-content: center;
     align-items: center;
 }
@@ -15,10 +18,10 @@
 /*Volver el título responsive*/
 @media screen and (min-width: 600px) {
     .Encabezado h1{
-        position: relative;
         display: flex;
-        top: 50px;
+        top: 30px;
         justify-content: center;
         align-items: center;
+        font-size: 2.4em;
     }
 }
