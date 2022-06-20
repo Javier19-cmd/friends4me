@@ -1,4 +1,3 @@
-import './PERN.css'
 import React from 'react'
 //const { Client } = require('pg');
 

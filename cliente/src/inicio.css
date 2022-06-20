@@ -1,0 +1,24 @@
+/*
+* Referencias: 
+* Sitios web responsive: https://aukera.es/blog/diseno-responsive/
+*/
+
+/*Propiedades del encabezado*/
+.Encabezado{
+    position: relative;
+    display: flex;
+    top: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Volver el título responsive*/
+@media screen and (min-width: 600px) {
+    .Encabezado h1{
+        position: relative;
+        display: flex;
+        top: 50px;
+        justify-content: center;
+        align-items: center;
+    }
+}
