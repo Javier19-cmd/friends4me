@@ -1,0 +1,60 @@
+/*
+* Referencas:
+* 1. Crear formulario de registro de usuario: https://www.youtube.com/watch?v=tIdNeoHniEY&ab_channel=LamaDev
+*/
+
+/*Propiedades del formulario*/
+.formulario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/*Propiedades del input*/
+input{
+    padding: 15px;
+    margin: 10px 0px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/*Propiedades del botón*/
+button{
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    border: none;
+    background-color: rgb(121, 55, 55);
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/*Propiedades del título*/
+h1{
+    font-family: 'Signika', sans-serif;
+    font-size: 2.4em;
+    color: rgb(121, 55, 55);
+    text-align: center;
+    margin-top: 30px;
+}
+
+/*Propiedades del div*/
+div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Color del mensaje de error*/
+label{
+    color: red;
+}

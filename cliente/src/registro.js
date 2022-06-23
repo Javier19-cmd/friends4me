@@ -7,6 +7,7 @@
 import React, { useState } from 'react' 
 import axios from 'axios'
 import md5 from 'md5'
+import './registroo.css'
 
 
 function Registro() {
@@ -18,56 +19,114 @@ function Registro() {
     const [correoo, setCorreo] = useState('')
     const [usuarioo, setUsuario] = useState('')
     const [contrasenaa, setContrasena] = useState('')
+    const [confirmarContrasenaa, setConfirmarContrasena] = useState('')
+    const [error, setError] = useState(false)
 
     // Método para insertar datos de registro en la base de datos.
     const handleSubmit = async (e) => {
         
         e.preventDefault() // Evita que se recargue la página.
 
-        console.log(md5(contrasenaa))
+        // Validación de campos.
+        if (primernombre.length === 0 || segundoNombre.length === 0 || primerApellido.length === 0 || segundoApellido.length === 0 || correoo.length === 0 || usuarioo.length === 0 || contrasenaa.length === 0 || confirmarContrasenaa.length === 0) {
+            setError(true)
+        }else{
+            setError(false)
+            axios.post("http://localhost:3000/registro", {
+                primer_nombre: primernombre,
+                segundo_nombre: segundoNombre,
+                primer_apellido: primerApellido,
+                segundo_apellido: segundoApellido,
+                correo: correoo,
+                usuario: usuarioo,
+                contrasena: md5(contrasenaa)
+            }).then(res => {
+                console.log(res)
+            }) // Se manda a dejar a la base de datos alojada en Elephant.
 
-        
-        axios.post("http://localhost:3000/registro", {
-            primer_nombre: primernombre,
-            segundo_nombre: segundoNombre,
-            primer_apellido: primerApellido,
-            segundo_apellido: segundoApellido,
-            correo: correoo,
-            usuario: usuarioo,
-            contrasena: md5(contrasenaa)
-        }).then(res => {
-            console.log(res)
-        }) // Se manda a dejar a la base de datos alojada en Elephant.
-
-        //window.location.reload() // Recarga la página.
+            window.location.reload() // Recarga la página.
+        }
     }
 
     return (
-      <div className='col-sm-6 offset-sm-3'>
-        <h1>Registro</h1>
+      <div className='formulario'>
+        <form onSubmit={handleSubmit}>
+          <h1>Registro</h1>
 
-        <input type='text' className='form-control' placeholder='Primer nombre' value={primernombre} onChange={(e) => setPrimerNombre(e.target.value)} />
-        <br />
+          <div>
+            <input type='text' className='Nombre1' placeholder='Primer nombre' value={primernombre} onChange={(e) => setPrimerNombre(e.target.value)} />
+            
+            {error && primernombre.length <= 0 ? 
+              <label> *Campo obligatorio</label>: ""
+            }
+            
+          </div>
+          
+          <div>
+            <input type='text' className='Nombre2' placeholder='Segundo nombre' value={segundoNombre} onChange={(e) => setSegundoNombre(e.target.value)} />
+            
+            {error && segundoNombre <=0 ? 
+              <label> *Campo obligatorio</label>:""
+            }
 
-        <input type='text' className='form-control' placeholder='Segundo nombre' value={segundoNombre} onChange={(e) => setSegundoNombre(e.target.value)} />
-        <br />
+          </div>
 
-        <input type='text' className='form-control' placeholder='Primer apellido' value={primerApellido} onChange={(e) => setPrimerApellido(e.target.value)} />
-        <br />
+          <div>
+            <input type='text' className='Apellido1' placeholder='Primer apellido' value={primerApellido} onChange={(e) => setPrimerApellido(e.target.value)} />
+            
+            {error && primerApellido <= 0 ? 
+              <label> *Campo obligatorio</label>:""
+            }
 
-        <input type='text' className='form-control' placeholder='Segundo apellido' value={segundoApellido} onChange={(e) => setSegundoApellido(e.target.value)} />
-        <br />
+          </div>
 
-        <input type='text' className='form-control' placeholder='Correo' value={correoo} onChange={(e) => setCorreo(e.target.value)} />
-        <br />
+          <div>
+            <input type='text' className='Apellido2' placeholder='Segundo apellido' value={segundoApellido} onChange={(e) => setSegundoApellido(e.target.value)} />
+            
+            {error && segundoApellido <= 0 ? 
+              <label> *Campo obligatorio</label>:""
+            }
 
-        <input type='text' className='form-control' placeholder='Usuario' value={usuarioo} onChange={(e) => setUsuario(e.target.value)} />
-        <br />
+          </div>
+          
+          <div>
+            <input type='text' className='Correo' placeholder='Correo' value={correoo} onChange={(e) => setCorreo(e.target.value)} />
+            
+            {error && correoo <= 0 ? 
+              <label> *Campo obligatorio</label>:""
+            }
 
-        <input type='password' className='form-control' placeholder='Contraseña' value={contrasenaa} onChange={(e) => setContrasena(e.target.value)} />
-        <br />
+          </div>
 
-        <button type='button' onClick={handleSubmit} className='btn btn-primary'>Registrarse</button>
+          <div>
+            <input type='text' className='Usuario' placeholder='Usuario' value={usuarioo} onChange={(e) => setUsuario(e.target.value)} />
+            
+            {error && usuarioo <= 0 ? 
+              <label> *Campo obligatorio</label>:""
+            }
+
+          </div>
+
+          <div>
+            <input type='password' className='Contrasena' placeholder='Contraseña' value={contrasenaa} onChange={(e) => setContrasena(e.target.value)} />
+            
+            {error && contrasenaa <=0 ? 
+              <label> *Campo obligatorio</label>:""
+            }
+
+          </div>
+
+          <div>
+            <input type='password' className='ConfirmarContrasena' placeholder='Confirmar contraseña' value={confirmarContrasenaa} onChange={(e) => setConfirmarContrasena(e.target.value)} />
+            
+            {error && confirmarContrasenaa <= 0 ? 
+              <label> *Campo obligatorio</label>:""
+            }
+
+          </div>
+
+          <button type='button' onClick={handleSubmit} className='boton'>Registrarse</button>
+        </form>
         
       </div>
     )
