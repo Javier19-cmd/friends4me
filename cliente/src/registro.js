@@ -1,9 +1,13 @@
 /**
  * Hacer formulario de registro: https://www.youtube.com/watch?v=kvJLiKLOPtk&ab_channel=CodeStepByStep
  * https://www.youtube.com/watch?v=9KaMsGSxGno&ab_channel=HHVTechnology
+ * Insertando datos en el API: https://www.youtube.com/watch?v=W-sZo6Gtx_E&ab_channel=PedroTech
+ * Cifrar un mensaje con el cifrado md5: https://www.npmjs.com/package/md5
  */
 import React, { useState } from 'react' 
 import axios from 'axios'
+import md5 from 'md5'
+
 
 function Registro() {
  
@@ -20,6 +24,9 @@ function Registro() {
         
         e.preventDefault() // Evita que se recargue la página.
 
+        console.log(md5(contrasenaa))
+
+        
         axios.post("http://localhost:3000/registro", {
             primer_nombre: primernombre,
             segundo_nombre: segundoNombre,
@@ -27,12 +34,12 @@ function Registro() {
             segundo_apellido: segundoApellido,
             correo: correoo,
             usuario: usuarioo,
-            contrasena: contrasenaa
+            contrasena: md5(contrasenaa)
         }).then(res => {
             console.log(res)
         }) // Se manda a dejar a la base de datos alojada en Elephant.
 
-        window.location.reload() // Recarga la página.
+        //window.location.reload() // Recarga la página.
     }
 
     return (
