@@ -3,6 +3,7 @@
  * https://www.youtube.com/watch?v=9KaMsGSxGno&ab_channel=HHVTechnology
  * Insertando datos en el API: https://www.youtube.com/watch?v=W-sZo6Gtx_E&ab_channel=PedroTech
  * Cifrar un mensaje con el cifrado md5: https://www.npmjs.com/package/md5
+ * Verificando que los campos estén llenos: https://www.youtube.com/watch?v=rZpc7HkmF5Q&ab_channel=CodingComics
  */
 import React, { useState } from 'react' 
 import axios from 'axios'
