@@ -3,6 +3,10 @@
 * 1. Crear formulario de registro de usuario: https://www.youtube.com/watch?v=tIdNeoHniEY&ab_channel=LamaDev
 */
 
+*{
+    font-family: 'Signika', sans-serif;
+}
+
 /*Propiedades del formulario*/
 .formulario{
     display: flex;
@@ -38,7 +42,6 @@ button{
 
 /*Propiedades del título*/
 h1{
-    font-family: 'Signika', sans-serif;
     font-size: 2.4em;
     color: rgb(121, 55, 55);
     text-align: center;
