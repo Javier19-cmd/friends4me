@@ -9,15 +9,23 @@ function Registro() {
     const [segundoNombre, setSegundoNombre] = useState('')
     const [primerApellido, setPrimerApellido] = useState('')
     const [segundoApellido, setSegundoApellido] = useState('')
-    const [correo, setCorreo] = useState('')
-    const [contrasena, setContrasena] = useState('')
+    const [correoo, setCorreo] = useState('')
+    const [usuarioo, setUsuario] = useState('')
+    const [contrasenaa, setContrasena] = useState('')
 
     // Método para insertar datos de registro en la base de datos.
     const handleSubmit = async (e) => {
         
         e.preventDefault() // Evita que se recargue la página.
 
-        const tupla = {primernombre, segundoNombre, primerApellido, segundoApellido, correo, contrasena}
+        const primer_nombre = {primernombre}
+        const segundo_nombre = {segundoNombre}
+        const primer_apellido = {primerApellido}
+        const segundo_apellido = {segundoApellido}
+        const correo = {correoo}
+        const usuario = {usuarioo}
+        const contrasena = {contrasenaa}
+
 
         try {
             // Insertando datos en la base de datos.
@@ -25,13 +33,15 @@ function Registro() {
           // Enviando datos a la BD.
           const response = await fetch('http://localhost:3000/registro', {
             method: 'POST',
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify(tupla)
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo, usuario, contrasena })
           })
 
           console.log(response) // Muestra en consola la respuesta del servidor.
 
-          window.location = '/' // Recarga la página.
+          //window.location = '/' // Recarga la página.
         }
         catch (error) {
             console.log(error.message) // Muestra en consola el error.
@@ -55,10 +65,13 @@ function Registro() {
         <input type='text' className='form-control' placeholder='Segundo apellido' value={segundoApellido} onChange={(e) => setSegundoApellido(e.target.value)} />
         <br />
 
-        <input type='text' className='form-control' placeholder='Correo' value={correo} onChange={(e) => setCorreo(e.target.value)} />
+        <input type='text' className='form-control' placeholder='Correo' value={correoo} onChange={(e) => setCorreo(e.target.value)} />
         <br />
 
-        <input type='password' className='form-control' placeholder='Contraseña' value={contrasena} onChange={(e) => setContrasena(e.target.value)} />
+        <input type='text' className='form-control' placeholder='Usuario' value={usuarioo} onChange={(e) => setUsuario(e.target.value)} />
+        <br />
+
+        <input type='password' className='form-control' placeholder='Contraseña' value={contrasenaa} onChange={(e) => setContrasena(e.target.value)} />
         <br />
 
         <button type='button' onClick={handleSubmit} className='btn btn-primary'>Registrarse</button>
