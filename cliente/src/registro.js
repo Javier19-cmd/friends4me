@@ -59,13 +59,13 @@ function Registro() {
             {error && primernombre.length <= 0 ? 
               <label> *Campo obligatorio</label>: ""
             }
-            
+
           </div>
           
           <div>
             <input type='text' className='Nombre2' placeholder='Segundo nombre' value={segundoNombre} onChange={(e) => setSegundoNombre(e.target.value)} />
             
-            {error && segundoNombre <=0 ? 
+            {error && segundoNombre.length <=0 ? 
               <label> *Campo obligatorio</label>:""
             }
 
@@ -74,7 +74,7 @@ function Registro() {
           <div>
             <input type='text' className='Apellido1' placeholder='Primer apellido' value={primerApellido} onChange={(e) => setPrimerApellido(e.target.value)} />
             
-            {error && primerApellido <= 0 ? 
+            {error && primerApellido.length <= 0 ? 
               <label> *Campo obligatorio</label>:""
             }
 
@@ -83,7 +83,7 @@ function Registro() {
           <div>
             <input type='text' className='Apellido2' placeholder='Segundo apellido' value={segundoApellido} onChange={(e) => setSegundoApellido(e.target.value)} />
             
-            {error && segundoApellido <= 0 ? 
+            {error && segundoApellido.length <= 0 ? 
               <label> *Campo obligatorio</label>:""
             }
 
@@ -92,7 +92,7 @@ function Registro() {
           <div>
             <input type='text' className='Correo' placeholder='Correo' value={correoo} onChange={(e) => setCorreo(e.target.value)} />
             
-            {error && correoo <= 0 ? 
+            {error && correoo.length <= 0 ? 
               <label> *Campo obligatorio</label>:""
             }
 
@@ -101,7 +101,7 @@ function Registro() {
           <div>
             <input type='text' className='Usuario' placeholder='Usuario' value={usuarioo} onChange={(e) => setUsuario(e.target.value)} />
             
-            {error && usuarioo <= 0 ? 
+            {error && usuarioo.length <= 0 ? 
               <label> *Campo obligatorio</label>:""
             }
 
@@ -110,7 +110,7 @@ function Registro() {
           <div>
             <input type='password' className='Contrasena' placeholder='Contraseña' value={contrasenaa} onChange={(e) => setContrasena(e.target.value)} />
             
-            {error && contrasenaa <=0 ? 
+            {error && contrasenaa.length <=0 ? 
               <label> *Campo obligatorio</label>:""
             }
 
@@ -119,8 +119,8 @@ function Registro() {
           <div>
             <input type='password' className='ConfirmarContrasena' placeholder='Confirmar contraseña' value={confirmarContrasenaa} onChange={(e) => setConfirmarContrasena(e.target.value)} />
             
-            {error && confirmarContrasenaa <= 0 ? 
-              <label> *Campo obligatorio</label>:""
+            {(error && confirmarContrasenaa.length <= 0) || (contrasenaa !== confirmarContrasenaa) ? 
+              <label> *Campo obligatorio o las contraseñas no coinciden</label>:""
             }
 
           </div>
