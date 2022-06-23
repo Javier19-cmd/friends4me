@@ -3,6 +3,7 @@
  * https://www.youtube.com/watch?v=9KaMsGSxGno&ab_channel=HHVTechnology
  */
 import React, { useState } from 'react' 
+import axios from 'axios'
 
 function Registro() {
  
@@ -19,35 +20,19 @@ function Registro() {
         
         e.preventDefault() // Evita que se recargue la página.
 
-        const primer_nombre = {primernombre}
-        const segundo_nombre = {segundoNombre}
-        const primer_apellido = {primerApellido}
-        const segundo_apellido = {segundoApellido}
-        const correo = {correoo}
-        const usuario = {usuarioo}
-        const contrasena = {contrasenaa}
+        axios.post("http://localhost:3000/registro", {
+            primer_nombre: primernombre,
+            segundo_nombre: segundoNombre,
+            primer_apellido: primerApellido,
+            segundo_apellido: segundoApellido,
+            correo: correoo,
+            usuario: usuarioo,
+            contrasena: contrasenaa
+        }).then(res => {
+            console.log(res)
+        }) // Se manda a dejar a la base de datos alojada en Elephant.
 
-
-        try {
-            // Insertando datos en la base de datos.
-
-          // Enviando datos a la BD.
-          const response = await fetch('http://localhost:3000/registro', {
-            method: 'POST',
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo, usuario, contrasena })
-          })
-
-          console.log(response) // Muestra en consola la respuesta del servidor.
-
-          //window.location = '/' // Recarga la página.
-        }
-        catch (error) {
-            console.log(error.message) // Muestra en consola el error.
-        }
-
+        window.location.reload() // Recarga la página.
     }
 
     return (
