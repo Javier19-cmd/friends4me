@@ -25,9 +25,7 @@ function Registro() {
           // Enviando datos a la BD.
           const response = await fetch('http://localhost:3000/registro', {
             method: 'POST',
-            headers: {
-              "Content-Type": "application/json"
-            },
+            headers: {"Content-Type": "application/json"},
             body: JSON.stringify(tupla)
           })
 
