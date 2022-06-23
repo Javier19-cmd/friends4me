@@ -30,7 +30,8 @@ const InputTodo = () => {
             <h1 className='text-center mt-5'>Interacción de CRUD</h1>
             <form className="d-flex mt-5" onSubmit={onSubmitForm}>
                 <input type="text" className="form-control" 
-                    value={description} onChange={e => setDescription(e.target.value)}/>
+                    value={description} 
+                    onChange={e => setDescription(e.target.value)}/>
                 <button className="btn btn-success">agregar</button>
             </form>
         </Fragment>

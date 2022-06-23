@@ -33,6 +33,25 @@ app.post('/todos', async (req, res) => {
     }
 })
 
+// Registro de usuarios.
+app.post('/registro', async (req, res) => {
+    
+    try {
+        const { primer_nombre } = req.body
+        const { segundo_nombre } = req.body
+        const { primer_apellido } = req.body
+        const { segundo_apellido } = req.body
+        const { correo } = req.body
+        const { usuario } = req.body
+        const { contrasena } = req.body
+        
+        const perfil = await pool.query('INSERT INTO info_usuario (primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo, usuario, contrasena) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *', [primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo, usuario, contrasena])
+        res.json(perfil)
+    } catch (error) {
+        console.log(error.message)
+    }
+})
+
 // Obteniendo todos los todos de una tabla. (Esto se manda a pedir a la base de datos alojada en Elephant.)
 
 app.get("/todos", async (req, res) => {
@@ -81,6 +100,7 @@ app.put("/todos/:id", async (req, res) => {
         console.log(error.message)
     }
 })
+
 
 // Eliminando un todo. (Esto se elimina en la base de datos alojada en Elephant.)
 app.delete("/todos/:id", async (req, res) => {
