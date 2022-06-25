@@ -6,8 +6,8 @@
  * Verificando que los campos estén llenos: https://www.youtube.com/watch?v=rZpc7HkmF5Q&ab_channel=CodingComics
  */
 import React, { useState } from 'react' 
-import axios from 'axios'
-import md5 from 'md5'
+import axios from 'axios' // Importar axios para los requests
+import md5 from 'md5' // Cifrar un mensaje con el cifrado md5
 import './registroo.css'
 
 
